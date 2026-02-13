@@ -22,7 +22,7 @@ const Hero = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-secondary-foreground max-w-2xl leading-relaxed">
-            I don't just hire engineers — I{" "}
+            I don't just hire engineers.{" "} I{" "}
             <span className="text-primary font-semibold">build the machines that find them</span>.
             12 years in tech recruiting. Now I automate what most teams still do manually.
           </p>
