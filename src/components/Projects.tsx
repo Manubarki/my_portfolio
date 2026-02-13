@@ -17,10 +17,10 @@ interface ProjectCardProps {
 const ProjectCard = ({ emoji, title, techBadge, techColor, bullets, image, index }: ProjectCardProps) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6, delay: index * 0.15 }}
+      initial={{ opacity: 0, y: 60, scale: 0.95 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.7, delay: index * 0.2, ease: [0.22, 1, 0.36, 1] }}
       className="group relative rounded-xl border border-glow bg-card overflow-hidden hover:glow-primary transition-all duration-500"
     >
       {/* Project screenshot */}
@@ -115,10 +115,10 @@ const Projects = () => {
     <section className="relative py-24 md:py-32">
       <div className="container max-w-5xl mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16 space-y-6"
         >
           <div className="font-mono text-sm text-muted-foreground">
