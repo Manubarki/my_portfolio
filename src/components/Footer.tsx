@@ -16,7 +16,7 @@ const Footer = () => {
         </p>
         <div className="flex flex-col md:flex-row items-center justify-between w-full gap-4 pt-4 border-t border-glow">
           <p className="font-mono text-sm text-muted-foreground">
-            <span className="text-primary">❯</span> Built with ☕ and automation
+            <span className="text-primary">❯</span> Built with <span className="text-2xl">☕</span> and automation
           </p>
         <a
           href="https://www.linkedin.com/in/manubarki/"
