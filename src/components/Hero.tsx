@@ -10,9 +10,9 @@ const Hero = () => {
 
       <div className="relative z-10 container max-w-4xl mx-auto px-6 py-24">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="space-y-8"
         >
 
