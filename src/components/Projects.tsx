@@ -1,11 +1,16 @@
 import { motion } from "framer-motion";
 
+import projectAiFit from "@/assets/project-ai-fit.png";
+import projectXray from "@/assets/project-xray.png";
+import projectGithub from "@/assets/project-github.png";
+
 interface ProjectCardProps {
   emoji: string;
   title: string;
   techBadge: string;
   techColor: string;
   bullets: string[];
+  image: string;
   index: number;
 }
 
