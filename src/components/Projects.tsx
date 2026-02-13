@@ -89,7 +89,7 @@ const projects = [
     techColor: "#22c55e",
     image: projectXray,
     bullets: [
-      "Runs daily in the background — zero manual effort",
+      "Runs daily in the background - zero manual effort",
       "Appends fresh profiles automatically to pipeline",
       "Removes duplicates by default",
       "Pipeline grows while I sleep",
