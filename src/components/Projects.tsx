@@ -14,19 +14,29 @@ interface ProjectCardProps {
   index: number;
 }
 
-const ProjectCard = ({ emoji, title, techBadge, techColor, bullets, index }: ProjectCardProps) => {
+const ProjectCard = ({ emoji, title, techBadge, techColor, bullets, image, index }: ProjectCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, delay: index * 0.15 }}
-      className="group relative rounded-xl border border-glow bg-card p-6 md:p-8 hover:glow-primary transition-all duration-500"
+      className="group relative rounded-xl border border-glow bg-card overflow-hidden hover:glow-primary transition-all duration-500"
     >
+      {/* Project screenshot */}
+      <div className="relative overflow-hidden">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-48 object-cover object-top group-hover:scale-105 transition-transform duration-500"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
+      </div>
+
       {/* Hover gradient overlay */}
       <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       
-      <div className="relative z-10 space-y-4">
+      <div className="relative z-10 p-6 md:p-8 space-y-4">
         <div className="flex items-start justify-between">
           <span className="text-4xl">{emoji}</span>
           <span
@@ -64,6 +74,7 @@ const projects = [
     title: "AI Fit Scoring Chrome Extension",
     techBadge: "Claude + Gemini",
     techColor: "#a855f7",
+    image: projectAiFit,
     bullets: [
       "Instantly scores candidate fit against job requirements",
       "Explains why they match with detailed reasoning",
@@ -76,6 +87,7 @@ const projects = [
     title: "Automated Google X-ray Engine",
     techBadge: "Google Apps Script",
     techColor: "#22c55e",
+    image: projectXray,
     bullets: [
       "Runs daily in the background — zero manual effort",
       "Appends fresh profiles automatically to pipeline",
@@ -88,6 +100,7 @@ const projects = [
     title: "GitHub Repo Miner",
     techBadge: "n8n + GitHub",
     techColor: "#f97316",
+    image: projectGithub,
     bullets: [
       "Finds top repositories by technology and stars",
       "Extracts repo owners and contributor profiles",
