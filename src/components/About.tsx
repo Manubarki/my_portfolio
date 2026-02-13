@@ -24,7 +24,7 @@ const About = () => {
           </div>
 
           <h2 className="text-3xl md:text-5xl font-bold font-display">
-            More than a recruiter —{" "}
+            More than a recruiter -{" "}
             <span className="text-gradient-primary">a talent partner</span>
           </h2>
         </motion.div>
@@ -40,7 +40,7 @@ const About = () => {
           >
             <p className="text-lg">
               I help founders, product leaders, and engineering heads solve the hard hiring
-              problems — and build teams that actually move the needle.
+              problems - and build teams that actually move the needle.
             </p>
             <p>
               At <span className="text-foreground font-semibold">Atlan</span>, I've grown
@@ -56,11 +56,11 @@ const About = () => {
               talent builds at{" "}
               <span className="text-foreground font-semibold">CareerNet</span> for
               fast-growing startups and large R&D orgs. Along the way, I learned how to
-              spot — and engage — great talent before anyone else does.
+              spot - and engage - great talent before anyone else does.
             </p>
             <p>
               I see recruitment as a long-term partnership. I care deeply about candidate
-              experience, inclusive hiring, and building trust with stakeholders — so every
+              experience, inclusive hiring, and building trust with stakeholders - so every
               hire feels thoughtful, not rushed.
             </p>
             <p className="text-primary font-semibold">
