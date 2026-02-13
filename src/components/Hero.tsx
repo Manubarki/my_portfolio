@@ -22,10 +22,9 @@ const Hero = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-secondary-foreground max-w-2xl leading-relaxed">
-            Talent professional turned{" "}
-            <span className="text-primary font-semibold">automation builder</span>.
-            I engineer AI-powered recruiting systems that source, screen, and surface
-            top engineering talent — while I sleep.
+            I don't just hire engineers — I{" "}
+            <span className="text-primary font-semibold">build the machines that find them</span>.
+            12 years in tech recruiting. Now I automate what most teams still do manually.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 text-base text-muted-foreground font-mono">
