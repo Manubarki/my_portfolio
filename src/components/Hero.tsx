@@ -39,9 +39,6 @@ const Hero = () => {
               🏢 Talent @ Atlan
             </span>
             <span className="px-3 py-1.5 rounded-md bg-secondary border border-glow">
-              🚀 Founder, Pihu.ai
-            </span>
-            <span className="px-3 py-1.5 rounded-md bg-secondary border border-glow">
               📍 Bangalore
             </span>
           </div>
