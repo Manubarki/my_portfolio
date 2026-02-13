@@ -19,7 +19,7 @@ const ProjectCard = ({ emoji, title, techBadge, techColor, bullets, image, index
     <motion.div
       initial={{ opacity: 0, y: 60, scale: 0.95 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ margin: "-80px" }}
       transition={{ duration: 0.7, delay: index * 0.2, ease: [0.22, 1, 0.36, 1] }}
       className="group relative rounded-xl border border-glow bg-card overflow-hidden hover:glow-primary transition-all duration-500"
     >
@@ -117,7 +117,7 @@ const Projects = () => {
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ margin: "-100px" }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16 space-y-6"
         >
