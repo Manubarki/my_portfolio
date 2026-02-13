@@ -79,9 +79,9 @@ const About = () => {
             {/* Values */}
             <div className="grid grid-cols-3 gap-3">
               {[
-                { icon: Briefcase, label: "5+ Years\nTech Hiring" },
-                { icon: Users, label: "Inclusive\nHiring" },
-                { icon: Handshake, label: "Long-term\nPartnerships" },
+                { icon: Briefcase, label: "12+ Years\nTech Hiring" },
+                { icon: Users, label: "Advanced\nSourcing" },
+                { icon: Handshake, label: "AI\nNative" },
               ].map(({ icon: Icon, label }) => (
                 <div
                   key={label}
