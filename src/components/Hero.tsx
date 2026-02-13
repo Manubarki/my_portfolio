@@ -15,12 +15,6 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="space-y-8"
         >
-          {/* Terminal-style greeting */}
-          <div className="font-mono text-sm text-muted-foreground flex items-center gap-2">
-            <span className="text-primary">❯</span>
-            <span>visitor.greet()</span>
-            <span className="terminal-cursor text-primary">▋</span>
-          </div>
 
           <h1 className="text-5xl md:text-7xl font-bold font-display leading-tight">
             Hi, I'm{" "}
