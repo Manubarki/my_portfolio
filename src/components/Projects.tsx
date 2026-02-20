@@ -84,6 +84,19 @@ const projects = [
     ],
   },
   {
+    emoji: "🧠",
+    title: "System Design Interview Evaluator",
+    techBadge: "Glean Agent",
+    techColor: "#3b82f6",
+    image: projectSysdesign,
+    bullets: [
+      "Reviews transcripts and outputs Hire / No Hire decisions",
+      "Rubric-based ratings across 6 dimensions including AI skills",
+      "Recommends level signal from P4 to P7 with confidence",
+      "Flags gaps and suggests what evidence to collect next",
+    ],
+  },
+  {
     emoji: "🌐",
     title: "Automated Google X-ray Engine",
     techBadge: "Google Apps Script",
@@ -107,19 +120,6 @@ const projects = [
       "Extracts repo owners and contributor profiles",
       "Builds clean outbound lists beyond LinkedIn",
       "Surfaces engineers who ship real code",
-    ],
-  },
-  {
-    emoji: "🧠",
-    title: "System Design Interview Evaluator",
-    techBadge: "Glean Agent",
-    techColor: "#3b82f6",
-    image: projectSysdesign,
-    bullets: [
-      "Reviews transcripts and outputs Hire / No Hire decisions",
-      "Rubric-based ratings across 6 dimensions including AI skills",
-      "Recommends level signal from P4 to P7 with confidence",
-      "Flags gaps and suggests what evidence to collect next",
     ],
   },
 ];
