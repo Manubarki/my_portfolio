@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import projectAiFit from "@/assets/project-ai-fit.png";
 import projectXray from "@/assets/project-xray.png";
 import projectGithub from "@/assets/project-github.png";
+import projectSysdesign from "@/assets/project-sysdesign.png";
 
 interface ProjectCardProps {
   emoji: string;
@@ -113,7 +114,7 @@ const projects = [
     title: "System Design Interview Evaluator",
     techBadge: "Glean Agent",
     techColor: "#3b82f6",
-    image: projectAiFit,
+    image: projectSysdesign,
     bullets: [
       "Reviews transcripts and outputs Hire / No Hire decisions",
       "Rubric-based ratings across 6 dimensions including AI skills",
