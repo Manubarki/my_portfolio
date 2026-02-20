@@ -22,22 +22,22 @@ const ProjectCard = ({ emoji, title, techBadge, techColor, bullets, image, index
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ margin: "-80px" }}
       transition={{ duration: 0.7, delay: index * 0.2, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative rounded-xl border border-glow bg-card overflow-hidden hover:glow-primary transition-all duration-500"
+      className="group relative rounded-xl border border-glow bg-card overflow-hidden hover:glow-primary transition-all duration-500 flex flex-col md:flex-row"
     >
       {/* Project screenshot */}
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden md:w-72 shrink-0">
         <img
           src={image}
           alt={title}
-          className="w-full h-48 object-cover object-top group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-48 md:h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-card to-transparent" />
       </div>
 
       {/* Hover gradient overlay */}
       <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       
-      <div className="relative z-10 p-6 md:p-8 space-y-4">
+      <div className="relative z-10 p-6 md:p-8 space-y-4 flex-1">
         <div className="flex items-start justify-between">
           <span className="text-4xl">{emoji}</span>
           <span
@@ -151,7 +151,7 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-3">
+        <div className="grid gap-6 grid-cols-1 lg:grid-cols-2">
           {projects.map((project, index) => (
             <ProjectCard key={project.title} {...project} index={index} />
           ))}
