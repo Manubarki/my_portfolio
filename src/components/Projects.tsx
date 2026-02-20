@@ -108,6 +108,19 @@ const projects = [
       "Surfaces engineers who ship real code",
     ],
   },
+  {
+    emoji: "🧠",
+    title: "System Design Interview Evaluator",
+    techBadge: "Glean Agent",
+    techColor: "#3b82f6",
+    image: projectAiFit,
+    bullets: [
+      "Reviews transcripts and outputs Hire / No Hire decisions",
+      "Rubric-based ratings across 6 dimensions including AI skills",
+      "Recommends level signal from P4 to P7 with confidence",
+      "Flags gaps and suggests what evidence to collect next",
+    ],
+  },
 ];
 
 const Projects = () => {
