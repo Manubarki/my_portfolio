@@ -116,8 +116,8 @@ const projects = [
     techColor: "#f97316",
     image: projectGithub,
     bullets: [
-      "Finds top repositories by technology and stars",
-      "Extracts repo owners and contributor profiles",
+      "Search the repositories",
+      "Extracts repo contributor profiles and other details including email ID",
       "Builds clean outbound lists beyond LinkedIn",
       "Surfaces engineers who ship real code",
     ],
