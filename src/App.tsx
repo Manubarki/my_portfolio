@@ -31,7 +31,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <ThemeToggle />
-        <BrowserRouter>
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
           <AnimatedRoutes />
         </BrowserRouter>
       </TooltipProvider>
