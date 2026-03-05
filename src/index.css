@@ -157,3 +157,21 @@
     animation: float 6s ease-in-out infinite;
   }
 }
+
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .print\\:hidden {
+    display: none !important;
+  }
+
+  section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
