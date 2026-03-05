@@ -115,6 +115,7 @@ const About = () => {
                   </div>
                   <div className="pb-6">
                     <p className="font-semibold text-foreground">{m.company}</p>
+                    <p className="text-xs text-muted-foreground font-mono">{m.period}</p>
                     <p className="text-sm text-primary font-mono">{m.role}</p>
                     <p className="text-sm text-muted-foreground mt-1">{m.detail}</p>
                   </div>
