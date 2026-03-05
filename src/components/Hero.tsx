@@ -36,18 +36,30 @@ const Hero = () => {
             </span>
           </div>
 
-          <motion.a
-            href="https://www.linkedin.com/in/manubarki/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:glow-primary transition-shadow duration-300"
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <Linkedin className="w-5 h-5" />
-            Connect on LinkedIn
-            <ExternalLink className="w-4 h-4" />
-          </motion.a>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <motion.a
+              href="https://www.linkedin.com/in/manubarki/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:glow-primary transition-shadow duration-300"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Linkedin className="w-5 h-5" />
+              Connect on LinkedIn
+              <ExternalLink className="w-4 h-4" />
+            </motion.a>
+
+            <motion.button
+              onClick={() => window.print()}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-glow bg-secondary text-foreground font-semibold hover:bg-accent transition-colors duration-300 print:hidden"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Download className="w-5 h-5" />
+              Save as PDF
+            </motion.button>
+          </div>
         </motion.div>
       </div>
     </section>
