@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { Briefcase, Users, Handshake } from "lucide-react";
 
 const milestones = [
-  { company: "Atlan", role: "Principal Recruiter → Talent Partner", detail: "Building Product, Design & Engineering teams for startups to global enterprises" },
-  { company: "Microsoft IDC", role: "High-velocity hiring", detail: "Scaled engineering teams at India Development Center" },
-  { company: "Akamai", role: "Niche engineering", detail: "Sourced specialized talent for core networking & security teams" },
-  { company: "CareerNet", role: "Custom talent builds", detail: "Delivered for fast-growing startups and large R&D orgs" },
+  { company: "Atlan", period: "Jun 2023 – Present", role: "Recruiter → Lead Recruiter (Promoted 2024)", detail: "Scaled Product team 6→15, Design 3→10, Frontend Eng 2→8. Consistently closing 7-8 senior roles per quarter." },
+  { company: "Microsoft", period: "May 2021 – May 2023", role: "Recruiter, PM/UX Orgs", detail: "Doubled offer output YoY. Maintained <10% decline rate for 2 consecutive years. Multi-region hiring." },
+  { company: "Akamai", period: "Jan 2018 – May 2021", role: "Talent Acquisition Specialist II", detail: "Spot award for filling niche senior security roles. Created award-winning selling pitch script." },
+  { company: "CareerNet", period: "Earlier", role: "Custom talent builds", detail: "Delivered for fast-growing startups and large R&D orgs across multiple domains." },
 ];
 
 const About = () => {
@@ -40,23 +40,17 @@ const About = () => {
           >
             <p className="text-lg">
               I help founders, product leaders, and engineering heads solve the hard hiring
-              problems - and build teams that actually move the needle.
+              problems — and build teams that actually move the needle.
             </p>
             <p>
-              At <span className="text-foreground font-semibold">Atlan</span>, I've grown
-              from Principal Recruiter to Talent Partner, working shoulder-to-shoulder with
-              leadership to build strong Product, Design, and Engineering teams that support
-              everything from early-stage startups to global enterprises.
+              At <span className="text-foreground font-semibold">Atlan</span> (since 2023), I was promoted to Lead Recruiter within my first year — scaling the Product team from 6 to 15, Design from 3 to 10, and Frontend Engineering from 2 to 8 in a single quarter. I consistently close 7-8 senior roles (P4+ including Director) per quarter.
             </p>
             <p>
-              Before Atlan, I cut my teeth across high-speed hiring at{" "}
-              <span className="text-foreground font-semibold">Microsoft's India Development Center</span>,
-              niche engineering teams at{" "}
-              <span className="text-foreground font-semibold">Akamai</span>, and custom
-              talent builds at{" "}
+              Before Atlan, I doubled offer output at{" "}
+              <span className="text-foreground font-semibold">Microsoft</span> (2021-2023) while keeping decline rates under 10%, earned a spot award at{" "}
+              <span className="text-foreground font-semibold">Akamai</span> (2018-2021) for filling niche senior security roles, and delivered custom talent builds at{" "}
               <span className="text-foreground font-semibold">CareerNet</span> for
-              fast-growing startups and large R&D orgs. Along the way, I learned how to
-              spot - and engage - great talent before anyone else does.
+              fast-growing startups and large R&D orgs.
             </p>
             <p>
               I see recruitment as a long-term partnership. I care deeply about candidate
@@ -115,6 +109,7 @@ const About = () => {
                   </div>
                   <div className="pb-6">
                     <p className="font-semibold text-foreground">{m.company}</p>
+                    <p className="text-xs text-muted-foreground font-mono">{m.period}</p>
                     <p className="text-sm text-primary font-mono">{m.role}</p>
                     <p className="text-sm text-muted-foreground mt-1">{m.detail}</p>
                   </div>

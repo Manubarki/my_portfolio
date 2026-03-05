@@ -24,7 +24,7 @@ const Hero = () => {
           <p className="text-xl md:text-2xl text-secondary-foreground max-w-2xl leading-relaxed">
             I don't just hire engineers.{" "} I{" "}
             <span className="text-primary font-semibold">build the machines that find them</span>.
-            More than a decade in recruiting, I learnt one thing - the best hires never come from job boards.
+            12+ years scaling teams across B2B SaaS, Cloud, Security & more — the best hires never come from job boards.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 text-base text-muted-foreground font-mono">
