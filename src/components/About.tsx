@@ -5,7 +5,7 @@ const milestones = [
   { company: "Atlan", period: "Jun 2023 – Present", role: "Recruiter → Lead Recruiter → Talent Partner", detail: "Building Product, Design & Engineering teams for startups to global enterprises", achievements: ["Product team 6→15, Design 3→10, Frontend Eng 2→8", "7-8 senior roles (P4+ incl. Director) closed per quarter", "4/4 performance rating & promotion within first year"] },
   { company: "Microsoft", period: "May 2021 – May 2023", role: "Recruiter, PM/UX Orgs", detail: "Scaled engineering teams at India Development Center", achievements: ["Doubled offer output YoY", "Offer decline rate <10% for 2 consecutive years", "Established new team in India from scratch"] },
   { company: "Akamai", period: "Jan 2018 – May 2021", role: "Talent Acquisition Specialist II", detail: "Sourced specialized talent for core networking & security teams", achievements: ["Spot award for filling niche senior security roles", "First Prize: Selling Pitch Script Development", "Led GitHub search & diversity sourcing initiatives"] },
-  { company: "CareerNet", period: "Earlier", role: "Custom talent builds", detail: "Delivered for fast-growing startups and large R&D orgs" },
+  { company: "CareerNet", period: "Apr 2013 – Jan 2018", role: "Custom talent builds", detail: "Delivered for fast-growing startups and large R&D orgs" },
 ];
 
 const About = () => {
