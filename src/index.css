@@ -174,4 +174,15 @@
     break-inside: avoid;
     page-break-inside: avoid;
   }
+
+  /* Force all framer-motion animated elements to be visible */
+  [style*="opacity"] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
