@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Linkedin, ExternalLink } from "lucide-react";
+import { Linkedin, ExternalLink, Download } from "lucide-react";
 
 const Hero = () => {
   return (
