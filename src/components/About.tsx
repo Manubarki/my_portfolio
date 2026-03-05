@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Briefcase, Users, Handshake } from "lucide-react";
 
 const milestones = [
-  { company: "Atlan", period: "Jun 2023 – Present", role: "Recruiter → Lead Recruiter (Promoted 2024)", detail: "Scaled Product team 6→15, Design 3→10, Frontend Eng 2→8. Consistently closing 7-8 senior roles per quarter." },
+  { company: "Atlan", period: "Jun 2023 – Present", role: "Recruiter → Lead Recruiter → Talent Partner", detail: "Scaled Product team 6→15, Design 3→10, Frontend Eng 2→8. Consistently closing 7-8 senior roles per quarter." },
   { company: "Microsoft", period: "May 2021 – May 2023", role: "Recruiter, PM/UX Orgs", detail: "Doubled offer output YoY. Maintained <10% decline rate for 2 consecutive years. Multi-region hiring." },
   { company: "Akamai", period: "Jan 2018 – May 2021", role: "Talent Acquisition Specialist II", detail: "Spot award for filling niche senior security roles. Created award-winning selling pitch script." },
   { company: "CareerNet", period: "Earlier", role: "Custom talent builds", detail: "Delivered for fast-growing startups and large R&D orgs across multiple domains." },
