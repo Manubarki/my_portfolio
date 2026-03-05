@@ -40,23 +40,17 @@ const About = () => {
           >
             <p className="text-lg">
               I help founders, product leaders, and engineering heads solve the hard hiring
-              problems - and build teams that actually move the needle.
+              problems — and build teams that actually move the needle.
             </p>
             <p>
-              At <span className="text-foreground font-semibold">Atlan</span>, I've grown
-              from Principal Recruiter to Talent Partner, working shoulder-to-shoulder with
-              leadership to build strong Product, Design, and Engineering teams that support
-              everything from early-stage startups to global enterprises.
+              At <span className="text-foreground font-semibold">Atlan</span> (since 2023), I was promoted to Lead Recruiter within my first year — scaling the Product team from 6 to 15, Design from 3 to 10, and Frontend Engineering from 2 to 8 in a single quarter. I consistently close 7-8 senior roles (P4+ including Director) per quarter.
             </p>
             <p>
-              Before Atlan, I cut my teeth across high-speed hiring at{" "}
-              <span className="text-foreground font-semibold">Microsoft's India Development Center</span>,
-              niche engineering teams at{" "}
-              <span className="text-foreground font-semibold">Akamai</span>, and custom
-              talent builds at{" "}
+              Before Atlan, I doubled offer output at{" "}
+              <span className="text-foreground font-semibold">Microsoft</span> (2021-2023) while keeping decline rates under 10%, earned a spot award at{" "}
+              <span className="text-foreground font-semibold">Akamai</span> (2018-2021) for filling niche senior security roles, and delivered custom talent builds at{" "}
               <span className="text-foreground font-semibold">CareerNet</span> for
-              fast-growing startups and large R&D orgs. Along the way, I learned how to
-              spot - and engage - great talent before anyone else does.
+              fast-growing startups and large R&D orgs.
             </p>
             <p>
               I see recruitment as a long-term partnership. I care deeply about candidate
