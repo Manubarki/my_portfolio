@@ -112,6 +112,16 @@ const About = () => {
                     <p className="text-xs text-muted-foreground font-mono">{m.period}</p>
                     <p className="text-sm text-primary font-mono">{m.role}</p>
                     <p className="text-sm text-muted-foreground mt-1">{m.detail}</p>
+                    {m.achievements && (
+                      <ul className="mt-2 space-y-1">
+                        {m.achievements.map((a, j) => (
+                          <li key={j} className="flex items-start gap-1.5 text-xs text-secondary-foreground">
+                            <span className="text-primary mt-0.5 shrink-0">✦</span>
+                            <span>{a}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </motion.div>
               ))}
