@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+**URL**: https://manubarki.github.io/my_portfolio/
 
 ## How can I edit this code?
 
