@@ -5,6 +5,8 @@ import projectGithub from "@/assets/project-github.png";
 import projectXray from "@/assets/project-xray.png";
 import projectAiFit from "@/assets/project-ai-fit.png";
 import projectSysdesign from "@/assets/project-sysdesign.png";
+import projectCompass from "@/assets/project-sourcing-compass.jpg";
+import projectOutbound from "@/assets/project-outbound.jpg";
 
 interface ProjectCardProps {
   emoji: string;
@@ -125,7 +127,7 @@ const projects: Omit<ProjectCardProps, "index">[] = [
     description: "AI-powered talent mapping tool that generates a complete sourcing strategy in under 30 seconds — target companies, poachability signals, adjacent talent pools, and LinkedIn search titles.",
     techBadge: "AI Agent",
     techColor: "#a855f7",
-    image: undefined,
+    image: projectCompass,
     githubUrl: "https://github.com/Manubarki/SourcingCompass",
     liveUrl: "https://sourcing-compass-lake.vercel.app",
     techStack: ["JavaScript", "OpenAI", "Vercel"],
@@ -192,6 +194,7 @@ const projects: Omit<ProjectCardProps, "index">[] = [
     description: "AI-powered outbound messaging assistant that drafts personalized outreach messages for candidates based on their profile data and the role context.",
     techBadge: "AI + Automation",
     techColor: "#ec4899",
+    image: projectOutbound,
     techStack: ["n8n", "OpenAI", "Google Sheets"],
     bullets: [
       "Generates hyper-personalized outreach based on candidate profile and role fit",
