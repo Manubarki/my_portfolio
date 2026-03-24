@@ -127,7 +127,7 @@ const projects: Omit<ProjectCardProps, "index">[] = [
     description: "AI-powered talent mapping tool that generates a complete sourcing strategy in under 30 seconds — target companies, poachability signals, adjacent talent pools, and LinkedIn search titles.",
     techBadge: "AI Agent",
     techColor: "#a855f7",
-    image: undefined,
+    image: projectCompass,
     githubUrl: "https://github.com/Manubarki/SourcingCompass",
     liveUrl: "https://sourcing-compass-lake.vercel.app",
     techStack: ["JavaScript", "OpenAI", "Vercel"],
