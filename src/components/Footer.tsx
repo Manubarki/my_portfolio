@@ -1,4 +1,4 @@
-import { Linkedin } from "lucide-react";
+import { Linkedin, Github } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -18,15 +18,26 @@ const Footer = () => {
           <p className="font-mono text-sm text-muted-foreground">
             <span className="text-primary">❯</span> Built with <span className="text-2xl">☕</span> and automation
           </p>
-        <a
-          href="https://www.linkedin.com/in/manubarki/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-        >
-          <Linkedin className="w-4 h-4" />
-          linkedin.com/in/manubarki
-        </a>
+        <div className="flex items-center gap-4">
+          <a
+            href="https://www.linkedin.com/in/manubarki/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+          >
+            <Linkedin className="w-4 h-4" />
+            LinkedIn
+          </a>
+          <a
+            href="https://github.com/Manubarki"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+          >
+            <Github className="w-4 h-4" />
+            GitHub
+          </a>
+        </div>
         </div>
       </div>
     </footer>

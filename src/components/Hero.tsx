@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Linkedin, ExternalLink, Download } from "lucide-react";
+import { Linkedin, ExternalLink, Download, Github } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -48,6 +48,18 @@ const Hero = () => {
               <Linkedin className="w-5 h-5" />
               Connect on LinkedIn
               <ExternalLink className="w-4 h-4" />
+            </motion.a>
+
+            <motion.a
+              href="https://github.com/Manubarki"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-glow bg-secondary text-foreground font-semibold hover:bg-accent transition-colors duration-300"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Github className="w-5 h-5" />
+              GitHub
             </motion.a>
 
             <motion.button
