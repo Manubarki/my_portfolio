@@ -194,6 +194,7 @@ const projects: Omit<ProjectCardProps, "index">[] = [
     description: "AI-powered outbound messaging assistant that drafts personalized outreach messages for candidates based on their profile data and the role context.",
     techBadge: "AI + Automation",
     techColor: "#ec4899",
+    image: projectOutbound,
     techStack: ["n8n", "OpenAI", "Google Sheets"],
     bullets: [
       "Generates hyper-personalized outreach based on candidate profile and role fit",
