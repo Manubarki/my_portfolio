@@ -5,6 +5,8 @@ import projectGithub from "@/assets/project-github.png";
 import projectXray from "@/assets/project-xray.png";
 import projectAiFit from "@/assets/project-ai-fit.png";
 import projectSysdesign from "@/assets/project-sysdesign.png";
+import projectCompass from "@/assets/project-sourcing-compass.jpg";
+import projectOutbound from "@/assets/project-outbound.jpg";
 
 interface ProjectCardProps {
   emoji: string;
