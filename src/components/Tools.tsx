@@ -12,7 +12,7 @@ const marqueeItems = [
   { icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>, label: 'Atlan Warm Connections' },
 ];
 
-function ToolCard({ href, children, wide }: { href?: string; children: React.ReactNode; wide?: boolean }) {
+function ToolCard({ href, children, wide, index = 0 }: { href?: string; children: React.ReactNode; wide?: boolean; index?: number }) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -52,7 +52,7 @@ function ToolCard({ href, children, wide }: { href?: string; children: React.Rea
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.55, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
       >
         {children}
       </motion.a>
@@ -65,7 +65,7 @@ function ToolCard({ href, children, wide }: { href?: string; children: React.Rea
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.55, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
     >
       {children}
     </motion.div>
@@ -90,7 +90,7 @@ export default function Tools() {
         </div>
 
         <div className="bento">
-          <ToolCard href="https://cncf-repo-search.lovable.app/">
+          <ToolCard href="https://cncf-repo-search.lovable.app/" index={0}>
             <div className="tc-top">
               <div className="tc-icon" style={{ background: 'rgba(52,211,153,0.1)' }}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="#34d399" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
@@ -102,7 +102,7 @@ export default function Tools() {
             <div className="tc-use"><strong>Engineering</strong>Hiring a Senior Kubernetes engineer? Surface top contributors to Kubernetes, Istio, or Prometheus repos.</div>
           </ToolCard>
 
-          <ToolCard href="https://madscape.lovable.app/">
+          <ToolCard href="https://madscape.lovable.app/" index={1}>
             <div className="tc-top">
               <div className="tc-icon" style={{ background: 'rgba(96,165,250,0.1)' }}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
@@ -114,7 +114,7 @@ export default function Tools() {
             <div className="tc-use"><strong>GTM</strong>Building an AE target list for AI/ML? Map sellers from Databricks, Snowflake, and dbt in seconds.</div>
           </ToolCard>
 
-          <ToolCard href="https://manubarki.github.io/repo-extract/">
+          <ToolCard href="https://manubarki.github.io/repo-extract/" index={2}>
             <div className="tc-top">
               <div className="tc-icon" style={{ background: 'rgba(167,139,250,0.1)' }}>
                 <svg viewBox="0 0 24 24" fill="currentColor" style={{ color: '#a78bfa' }} aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -126,7 +126,7 @@ export default function Tools() {
             <div className="tc-use"><strong>Engineering</strong>Drop any repo URL (e.g. Apache Iceberg) and get a ranked shortlist ready to reach out to.</div>
           </ToolCard>
 
-          <ToolCard href="https://sourcing-compass-lake.vercel.app" wide>
+          <ToolCard href="https://sourcing-compass-lake.vercel.app" wide index={3}>
             <div className="tc-top">
               <div className="tc-icon" style={{ background: 'rgba(244,114,182,0.1)' }}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="#ec4899" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
@@ -138,7 +138,7 @@ export default function Tools() {
             <div className="tc-use"><strong>Engineering & GTM</strong>Works for Principal AI Engineers as well as Enterprise AE searches across North America. One tool, both motions.</div>
           </ToolCard>
 
-          <ToolCard>
+          <ToolCard index={4}>
             <div className="tc-top">
               <div className="tc-icon" style={{ background: 'rgba(96,165,250,0.1)' }}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M12 8v4l3 3"/></svg>
@@ -150,7 +150,7 @@ export default function Tools() {
             <div className="tc-use"><strong>Screening</strong>200+ inbound applicants? Surface the top 20 in under an hour instead of a full day.</div>
           </ToolCard>
 
-          <ToolCard>
+          <ToolCard index={5}>
             <div className="tc-top">
               <div className="tc-icon" style={{ background: 'rgba(167,139,250,0.1)' }}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
@@ -162,7 +162,7 @@ export default function Tools() {
             <div className="tc-use"><strong>Automation</strong>Paste intake notes into Claude. The skill handles the boolean, filters, shortlist, and export.</div>
           </ToolCard>
 
-          <ToolCard>
+          <ToolCard index={6}>
             <div className="tc-top">
               <div className="tc-icon" style={{ background: 'rgba(251,191,36,0.1)' }}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="#fbbf24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -174,7 +174,7 @@ export default function Tools() {
             <div className="tc-use"><strong>Offer Stage</strong>Finalist weighing two offers? CloserIQ builds a tailored plan for the hiring manager to win them over.</div>
           </ToolCard>
 
-          <ToolCard>
+          <ToolCard index={7}>
             <div className="tc-top">
               <div className="tc-icon" style={{ background: 'rgba(52,211,153,0.1)' }}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="#34d399" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>

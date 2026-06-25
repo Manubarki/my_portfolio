@@ -1,12 +1,22 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 export default function Nav() {
+  const { scrollY } = useScroll();
+  const bgOpacity = useTransform(scrollY, [0, 80], [0.45, 0.85]);
+  const borderOpacity = useTransform(scrollY, [0, 80], [0.08, 0.18]);
+  const blur = useTransform(scrollY, [0, 80], [16, 28]);
+
   return (
     <motion.nav
       className="p-nav"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
+      style={{
+        backgroundColor: useTransform(bgOpacity, v => `rgba(10,10,18,${v})`),
+        borderColor: useTransform(borderOpacity, v => `rgba(255,255,255,${v})`),
+        backdropFilter: useTransform(blur, v => `blur(${v}px)`),
+      }}
     >
       <div className="nav-logo">Manu Barki<span>.</span></div>
       <div className="nav-links">
