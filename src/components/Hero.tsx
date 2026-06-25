@@ -80,7 +80,7 @@ export default function Hero() {
               <div className="comic-face comic-front">
                 <div className="comic-dots" aria-hidden="true" />
                 <div className="comic-frame">
-                  <img src="/comic-avatar.png" alt="Manu Barki — comic" className="comic-img" />
+                  <img src={`${import.meta.env.BASE_URL}comic-avatar.png`} alt="Manu Barki — comic" className="comic-img" />
                 </div>
                 <div className="comic-lines" aria-hidden="true">
                   <span/><span/><span/><span/><span/>
