@@ -1,5 +1,6 @@
 import { useRef, useEffect } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
+import comicAvatar from '../assets/comic-avatar.png';
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 30 },
@@ -80,7 +81,7 @@ export default function Hero() {
               <div className="comic-face comic-front">
                 <div className="comic-dots" aria-hidden="true" />
                 <div className="comic-frame">
-                  <img src={`${import.meta.env.BASE_URL}comic-avatar.png`} alt="Manu Barki — comic" className="comic-img" />
+                  <img src={comicAvatar} alt="Manu Barki — comic" className="comic-img" />
                 </div>
                 <div className="comic-lines" aria-hidden="true">
                   <span/><span/><span/><span/><span/>
