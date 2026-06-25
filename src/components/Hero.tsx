@@ -14,17 +14,20 @@ function AnimatedCounter({ target, suffix = '' }: { target: number; suffix?: str
 
   useEffect(() => {
     if (!inView) return;
-    let start = 0;
-    const duration = 1400;
-    const startTime = performance.now();
-    const step = (now: number) => {
-      const progress = Math.min((now - startTime) / duration, 1);
-      const ease = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(ease * target));
-      if (progress < 1) requestAnimationFrame(step);
-      else setCount(target);
-    };
-    requestAnimationFrame(step);
+    const duration = 1600;
+    let rafId: number;
+    const timeout = setTimeout(() => {
+      const startTime = performance.now();
+      const step = (now: number) => {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 3);
+        setCount(Math.floor(ease * target));
+        if (progress < 1) { rafId = requestAnimationFrame(step); }
+        else setCount(target);
+      };
+      rafId = requestAnimationFrame(step);
+    }, 600);
+    return () => { clearTimeout(timeout); cancelAnimationFrame(rafId); };
   }, [inView, target]);
 
   return (
