@@ -498,7 +498,23 @@
     @media (max-width: 800px) { .about-grid { grid-template-columns: 1fr; } }
     .about-text p { color: var(--muted); line-height: 1.8; margin-bottom: 1rem; font-size: 0.97rem; }
     .about-text p strong { color: var(--text); }
-    .skill-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+    .stack-section { margin-top: 1.75rem; margin-bottom: 0.25rem; }
+    .stack-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted2); margin-bottom: 0.75rem; }
+    .stack-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .stack-chip {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: 10px;
+      font-size: 0.8rem; font-weight: 600;
+      background: var(--glass-bg-md);
+      border: 1px solid var(--glass-border);
+      color: var(--text);
+      cursor: default;
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    }
+    .stack-chip:hover { border-color: var(--purple2); background: rgba(139,92,246,0.12); transform: translateY(-2px); }
+    .stack-chip svg { color: var(--purple2); flex-shrink: 0; }
+    .skill-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
     .skill-tag {
       font-size: 0.77rem;
       padding: 0.38rem 0.85rem;
@@ -978,28 +994,59 @@
     <div class="about-grid">
       <div class="about-text">
         <div class="tag">About Me</div>
-        <h2 class="sec-title">Recruiter who codes.</h2>
+        <h2 class="sec-title">Talent Partner.<br/>AI builder.</h2>
         <p>
           I'm a <strong>Talent Partner at Atlan</strong> based in Bengaluru, with 12+ years of experience scaling engineering and product teams at high-growth startups and enterprise SaaS companies.
         </p>
         <p>
           I got tired of spending hours on tasks that should take minutes — sourcing, screening, pipeline management, offer closing. So I started building tools to fix them. Each one is designed to give recruiters back their time and give candidates a better experience.
         </p>
-        <p>
-          Stack of choice: <strong>Claude AI, TypeScript, Chrome Extensions, GitHub APIs, and Vercel</strong>. Open source by default.
-        </p>
+        <div class="stack-section">
+          <div class="stack-label">Stack</div>
+          <div class="stack-grid">
+            <div class="stack-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M12 8v4l3 3"/></svg>
+              Claude
+            </div>
+            <div class="stack-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              Gemini
+            </div>
+            <div class="stack-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+              ChatGPT
+            </div>
+            <div class="stack-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              Google Apps Script
+            </div>
+            <div class="stack-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+              n8n
+            </div>
+            <div class="stack-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              Vercel
+            </div>
+            <div class="stack-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/></svg>
+              Railway
+            </div>
+            <div class="stack-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              Supabase
+            </div>
+          </div>
+        </div>
         <div class="skill-cloud">
           <span class="skill-tag">Technical Recruiting</span>
           <span class="skill-tag">AI / LLM Tooling</span>
+          <span class="skill-tag">Workflow Automation</span>
           <span class="skill-tag">Chrome Extensions</span>
-          <span class="skill-tag">GitHub APIs</span>
-          <span class="skill-tag">TypeScript</span>
-          <span class="skill-tag">Claude AI</span>
           <span class="skill-tag">Talent Mapping</span>
           <span class="skill-tag">Offer Closing</span>
           <span class="skill-tag">Sourcing Automation</span>
           <span class="skill-tag">Data Enrichment</span>
-          <span class="skill-tag">Vercel</span>
           <span class="skill-tag">Boolean Search</span>
         </div>
       </div>
