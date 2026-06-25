@@ -728,12 +728,11 @@
     }
     .comic-img {
       width: 100%;
-      height: 100%;
+      height: 120%;
       object-fit: cover;
-      object-position: top center;
+      object-position: 50% 12%;
       display: block;
-      /* SVG posterize + contrast punch */
-      filter: url(#comic-filter) contrast(1.15);
+      filter: none;
     }
     /* Halftone dot shadow overlay — gives the printed comic ink feel */
     .comic-halftone {
@@ -1022,9 +1021,7 @@
           <div class="comic-face comic-front">
             <div class="comic-dots" aria-hidden="true"></div>
             <div class="comic-frame">
-              <img src="https://avatars.githubusercontent.com/u/20680676?v=4" alt="Manu Barki — comic" class="comic-img" />
-              <div class="comic-halftone" aria-hidden="true"></div>
-              <div class="comic-overlay" aria-hidden="true"></div>
+              <img src="comic-avatar.png" alt="Manu Barki — comic" class="comic-img" />
             </div>
             <div class="comic-lines" aria-hidden="true">
               <span></span><span></span><span></span><span></span><span></span>
