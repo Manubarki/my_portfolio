@@ -623,6 +623,107 @@
       nav .nav-links { display: none; }
       .hero-stats { gap: 1.5rem; }
     }
+
+    /* ── 3D tilt cards ───────────────────────────────────── */
+    .tilt-card {
+      transform-style: preserve-3d;
+      will-change: transform;
+      transition: transform 0.08s linear, border-color 0.2s, box-shadow 0.2s;
+    }
+    .tilt-card:hover { box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+    .tilt-card .tilt-shine {
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.08), transparent 65%);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .tilt-card:hover .tilt-shine { opacity: 1; }
+
+    /* ── Scroll reveal ───────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+    .reveal-delay-4 { transition-delay: 0.32s; }
+    .reveal-delay-5 { transition-delay: 0.40s; }
+    .reveal-delay-6 { transition-delay: 0.48s; }
+    .reveal-delay-7 { transition-delay: 0.56s; }
+    .reveal-delay-8 { transition-delay: 0.64s; }
+
+    /* ── 3D floating hero card ───────────────────────────── */
+    @keyframes float3d {
+      0%   { transform: perspective(900px) rotateX(2deg) rotateY(-3deg) translateY(0px); }
+      50%  { transform: perspective(900px) rotateX(-1deg) rotateY(3deg) translateY(-10px); }
+      100% { transform: perspective(900px) rotateX(2deg) rotateY(-3deg) translateY(0px); }
+    }
+    .hero-card-wrap {
+      animation: float3d 7s ease-in-out infinite;
+      transform-style: preserve-3d;
+    }
+    .hero-card-wrap:hover { animation-play-state: paused; }
+
+    /* ── Glint sweep on glass cards ──────────────────────── */
+    @keyframes glint {
+      0%   { transform: translateX(-100%) skewX(-15deg); }
+      100% { transform: translateX(300%) skewX(-15deg); }
+    }
+    .glint-card { position: relative; overflow: hidden; }
+    .glint-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+      transform: translateX(-100%) skewX(-15deg);
+      pointer-events: none;
+    }
+    .glint-card:hover::after {
+      animation: glint 0.7s ease-out forwards;
+    }
+
+    /* ── Stat counter pop ────────────────────────────────── */
+    @keyframes popIn {
+      0%   { transform: scale(0.7); opacity: 0; }
+      70%  { transform: scale(1.08); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .stat-pop { animation: popIn 0.6s cubic-bezier(0.34,1.56,0.64,1) both; }
+
+    /* ── Orb parallax ────────────────────────────────────── */
+    .orb { transition: transform 0.12s ease-out; }
+
+    /* ── 3D section headings ─────────────────────────────── */
+    h2.sec-title, h1.hero-title {
+      text-shadow: 0 2px 0 rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.25);
+    }
+
+    /* ── Stack chip 3D pop ───────────────────────────────── */
+    .stack-chip { transform-style: preserve-3d; }
+    .stack-chip:hover { transform: translateY(-4px) scale(1.05) rotateX(8deg); box-shadow: 0 8px 20px rgba(139,92,246,0.3); }
+
+    /* ── Project / tool card depth shadow ────────────────── */
+    .tool-card, .proj-card {
+      box-shadow: 0 4px 24px rgba(0,0,0,0.3), 0 1px 0 rgba(255,255,255,0.04) inset;
+    }
+    .tool-card:hover, .proj-card:hover {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.55), 0 1px 0 rgba(255,255,255,0.08) inset;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-card-wrap { animation: none !important; }
+      .tilt-card { transition: none !important; }
+      .glint-card::after { animation: none !important; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
   </style>
 </head>
 <body>
@@ -662,7 +763,7 @@
         Hiring with<br /><span class="grad-text">intelligence.</span>
       </h1>
       <p class="hero-sub fade-up d3">
-        I'm Manu Barki — 12+ years scaling engineering and product teams.
+        I'm Manu Barki — 13+ years scaling engineering and product teams.
         I build AI-powered sourcing tools that turn days of recruiting work into minutes.
       </p>
       <div class="cta-row fade-up d4">
@@ -681,7 +782,7 @@
           <div class="stat-label">AI Tools Built & Building</div>
         </div>
         <div>
-          <div class="stat-num">12+</div>
+          <div class="stat-num">13+</div>
           <div class="stat-label">Years Recruiting</div>
         </div>
         <div>
@@ -1000,7 +1101,7 @@
         <div class="tag">About Me</div>
         <h2 class="sec-title">Talent Partner.<br/>AI builder.</h2>
         <p>
-          I'm a <strong>Talent Partner at Atlan</strong> based in Bengaluru, with 12+ years of experience scaling engineering and product teams at high-growth startups and enterprise SaaS companies.
+          I'm a <strong>Talent Partner at Atlan</strong> based in Bengaluru, with 13+ years of experience scaling engineering and product teams at high-growth startups and enterprise SaaS companies.
         </p>
         <p>
           I got tired of spending hours on tasks that should take minutes — sourcing, screening, pipeline management, offer closing. So I started building tools to fix them. Each one is designed to give recruiters back their time and give candidates a better experience.
@@ -1088,7 +1189,7 @@
           </div>
           <div>
             <div class="ac-lbl">Experience</div>
-            <div class="ac-val">12+ years in recruiting</div>
+            <div class="ac-val">13+ years in recruiting</div>
           </div>
         </div>
         <div class="ac-row">
@@ -1156,5 +1257,132 @@
   Built by <a href="https://github.com/Manubarki">Manu Barki</a> · Atlan Talent Partner · Bengaluru
 </footer>
 
+<script>
+/* ── 3D tilt on tool & project cards ─────────────────── */
+function initTilt() {
+  document.querySelectorAll('.tool-card, .proj-card, .about-card').forEach(card => {
+    card.classList.add('tilt-card', 'glint-card');
+    const shine = document.createElement('div');
+    shine.className = 'tilt-shine';
+    card.appendChild(shine);
+
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width  - 0.5;
+      const y = (e.clientY - r.top)  / r.height - 0.5;
+      const rotY =  x * 14;
+      const rotX = -y * 10;
+      card.style.transform = `perspective(700px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(6px)`;
+      shine.style.background = `radial-gradient(circle at ${(x+0.5)*100}% ${(y+0.5)*100}%, rgba(255,255,255,0.11), transparent 65%)`;
+      shine.style.opacity = '1';
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+      shine.style.opacity = '0';
+    });
+  });
+}
+
+/* ── Scroll reveal via IntersectionObserver ──────────── */
+function initReveal() {
+  const targets = document.querySelectorAll(
+    '.tool-card, .proj-card, .about-card, h2.sec-title, .sec-sub, .stack-section, .skill-cloud, .hero-card, .about-text p, .contact-card, .marquee-wrap'
+  );
+  targets.forEach((el, i) => {
+    el.classList.add('reveal');
+    const delay = Math.min(i % 8, 7);
+    if (delay) el.classList.add(`reveal-delay-${delay}`);
+  });
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  targets.forEach(el => io.observe(el));
+}
+
+/* ── Animated stat counters ──────────────────────────── */
+function animateCounters() {
+  document.querySelectorAll('.stat-num').forEach(el => {
+    const raw   = el.textContent.trim();
+    const num   = parseInt(raw);
+    const suffix = raw.replace(num, '');
+    let start = null;
+    const dur = 1200;
+
+    el.classList.add('stat-pop');
+
+    function step(ts) {
+      if (!start) start = ts;
+      const p = Math.min((ts - start) / dur, 1);
+      const ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.floor(ease * num) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  });
+}
+
+/* ── Parallax orbs on mousemove ──────────────────────── */
+function initParallax() {
+  const orbs = [
+    { el: document.querySelector('.orb-1'), sx: 0.018, sy: 0.012 },
+    { el: document.querySelector('.orb-2'), sx: -0.022, sy: 0.015 },
+    { el: document.querySelector('.orb-3'), sx: 0.012, sy: -0.02  },
+  ];
+  let cx = 0, cy = 0, tx = 0, ty = 0;
+
+  document.addEventListener('mousemove', e => {
+    tx = (e.clientX - window.innerWidth  / 2);
+    ty = (e.clientY - window.innerHeight / 2);
+  });
+
+  function tick() {
+    cx += (tx - cx) * 0.07;
+    cy += (ty - cy) * 0.07;
+    orbs.forEach(o => {
+      if (o.el) o.el.style.transform = `translate(${cx * o.sx}px, ${cy * o.sy}px)`;
+    });
+    requestAnimationFrame(tick);
+  }
+  tick();
+}
+
+/* ── Hero card wrap ──────────────────────────────────── */
+function wrapHeroCard() {
+  const card = document.querySelector('.hero-card');
+  if (!card) return;
+  const wrap = document.createElement('div');
+  wrap.className = 'hero-card-wrap';
+  card.parentNode.insertBefore(wrap, card);
+  wrap.appendChild(card);
+
+  // override float with mouse tilt when hovered
+  wrap.addEventListener('mousemove', e => {
+    const r = wrap.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width  - 0.5;
+    const y = (e.clientY - r.top)  / r.height - 0.5;
+    wrap.style.animation = 'none';
+    wrap.style.transform = `perspective(900px) rotateX(${-y*12}deg) rotateY(${x*16}deg) translateY(-6px)`;
+  });
+  wrap.addEventListener('mouseleave', () => {
+    wrap.style.transform = '';
+    wrap.style.animation = '';
+  });
+}
+
+/* ── Boot ────────────────────────────────────────────── */
+if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+  document.addEventListener('DOMContentLoaded', () => {
+    wrapHeroCard();
+    initTilt();
+    initReveal();
+    initParallax();
+    setTimeout(animateCounters, 300);
+  });
+}
+</script>
 </body>
 </html>
