@@ -1,142 +1,74 @@
-import { motion } from "framer-motion";
-import { Briefcase, Users, Handshake } from "lucide-react";
+import { motion } from 'framer-motion';
 
-const milestones = [
-  { company: "Atlan", period: "Jun 2023 – Present", role: "Recruiter → Lead Recruiter → Talent Partner", detail: "Building Engineering, Product & Design teams for startups to global enterprises", achievements: ["Scaled Frontend, Backend & Platform engineering teams", "Grew Product and Design orgs significantly", "Consistently closing senior roles (P4+ incl. Director) each quarter", "Top performance rating & promotion within first year"] },
-  { company: "Microsoft", period: "May 2021 – May 2023", role: "Recruiter, PM/UX Orgs", detail: "Scaled engineering teams at India Development Center", achievements: ["Doubled offer output YoY", "Offer decline rate <10% for 2 consecutive years", "Established new team in India from scratch"] },
-  { company: "Akamai", period: "Jan 2018 – May 2021", role: "Talent Acquisition Specialist II", detail: "Sourced specialized talent for core networking & security teams", achievements: ["Spot award for filling niche senior security roles", "First Prize: Selling Pitch Script Development", "Led GitHub search & diversity sourcing initiatives"] },
-  { company: "CareerNet", period: "Apr 2013 – Jan 2018", role: "Custom talent builds", detail: "Delivered for fast-growing startups and large R&D orgs" },
+const stack = [
+  { icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M12 8v4l3 3"/></svg>, label: 'Claude' },
+  { icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>, label: 'Gemini' },
+  { icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>, label: 'ChatGPT' },
+  { icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>, label: 'Google Apps Script' },
+  { icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>, label: 'n8n' },
+  { icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>, label: 'Vercel' },
+  { icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/></svg>, label: 'Railway' },
+  { icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>, label: 'Supabase' },
+  { icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>, label: 'Lovable' },
 ];
 
-const About = () => {
+const skills = ['Technical Recruiting', 'AI / LLM Tooling', 'Workflow Automation', 'Chrome Extensions', 'Talent Mapping', 'Offer Closing', 'Sourcing Automation', 'Data Enrichment', 'Boolean Search'];
+
+export default function About() {
   return (
-    <section className="relative py-24 md:py-32">
-      <div className="container max-w-5xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ margin: "-100px" }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-12 space-y-6"
-        >
-          <div className="font-mono text-sm text-muted-foreground">
-            <span className="text-primary">❯</span> about.read()
+    <section id="about" className="p-section">
+      <div className="inner">
+        <div className="about-grid">
+          <div className="about-text">
+            <motion.div className="tag" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>About Me</motion.div>
+            <motion.h2 className="sec-title" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>Lead Talent Partner.<br/>AI builder.</motion.h2>
+            <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
+              I'm a <strong>Lead Talent Partner at Atlan</strong> based in Bengaluru, with 13+ years of experience scaling engineering and product teams at high-growth startups and enterprise SaaS companies.
+            </motion.p>
+            <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.18 }}>
+              I got tired of spending hours on tasks that should take minutes — sourcing, screening, pipeline management, offer closing. So I started building tools to fix them. Each one is designed to give recruiters back their time and give candidates a better experience.
+            </motion.p>
+            <motion.div className="stack-section" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.26 }}>
+              <div className="stack-label">Stack</div>
+              <div className="stack-grid">
+                {stack.map((s) => (
+                  <div key={s.label} className="stack-chip">{s.icon}{s.label}</div>
+                ))}
+              </div>
+            </motion.div>
+            <motion.div className="skill-cloud" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.34 }}>
+              {skills.map((s) => <span key={s} className="skill-tag">{s}</span>)}
+            </motion.div>
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-bold font-display">
-            More than a recruiter -{" "}
-            <span className="text-gradient-primary">a talent partner</span>
-          </h2>
-        </motion.div>
-
-        <div className="grid gap-12 lg:grid-cols-2">
-          {/* Narrative */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="space-y-5 text-secondary-foreground leading-relaxed"
-          >
-            <p className="text-lg">
-              I help founders, product leaders, and engineering heads solve the hard hiring
-              problems - and build teams that actually move the needle.
-            </p>
-            <p>
-              At <span className="text-foreground font-semibold">Atlan</span>, I've grown
-              from Principal Recruiter to Talent Partner, working shoulder-to-shoulder with
-              leadership to build strong Product, Design, and Engineering teams that support
-              everything from early-stage startups to global enterprises.
-            </p>
-            <p>
-              Before Atlan, I cut my teeth across high-speed hiring at{" "}
-              <span className="text-foreground font-semibold">Microsoft's India Development Center</span>,
-              niche engineering teams at{" "}
-              <span className="text-foreground font-semibold">Akamai</span>, and custom
-              talent builds at{" "}
-              <span className="text-foreground font-semibold">CareerNet</span> for
-              fast-growing startups and large R&D orgs. Along the way, I learned how to
-              spot - and engage - great talent before anyone else does.
-            </p>
-            <p>
-              I see recruitment as a long-term partnership. I care deeply about candidate
-              experience, inclusive hiring, and building trust with stakeholders - so every
-              hire feels thoughtful, not rushed.
-            </p>
-            <p className="text-primary font-semibold">
-              If you're building a team that needs to scale and innovate, let's connect.
-            </p>
-          </motion.div>
-
-          {/* Values + Timeline */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="space-y-8"
-          >
-            {/* Values */}
-            <div className="grid grid-cols-3 gap-3">
-              {[
-                { icon: Briefcase, label: "12+ Years\nTech Hiring" },
-                { icon: Users, label: "Advanced\nSourcing" },
-                { icon: Handshake, label: "AI\nNative" },
-              ].map(({ icon: Icon, label }) => (
-                <div
-                  key={label}
-                  className="flex flex-col items-center gap-2 rounded-lg border border-glow bg-card p-4 text-center"
-                >
-                  <Icon className="w-6 h-6 text-primary" />
-                  <span className="text-xs font-mono text-muted-foreground whitespace-pre-line">
-                    {label}
-                  </span>
-                </div>
-              ))}
+          <motion.div className="about-card glass-md" initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}>
+            {[
+              { icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>, lbl: 'Company', val: 'Atlan · Ex Microsoft · Ex Akamai' },
+              { icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>, lbl: 'Location', val: 'Bengaluru, India' },
+              { icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>, lbl: 'Role', val: 'Lead Talent Partner' },
+              { icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, lbl: 'Experience', val: '13+ years in recruiting' },
+              { icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>, lbl: 'Focus', val: 'Engineering & Product hiring' },
+            ].map((r) => (
+              <div key={r.lbl} className="ac-row">
+                <div className="ac-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{r.icon.props.children}</svg></div>
+                <div><div className="ac-lbl">{r.lbl}</div><div className="ac-val">{r.val}</div></div>
+              </div>
+            ))}
+            <div className="ac-row">
+              <div className="ac-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </div>
+              <div><div className="ac-lbl">GitHub</div><div className="ac-val"><a href="https://github.com/Manubarki" target="_blank" rel="noopener" style={{ color: 'var(--purple2)' }}>@Manubarki</a></div></div>
             </div>
-
-            {/* Journey */}
-            <div className="space-y-4">
-              <h3 className="font-mono text-sm text-muted-foreground">// journey</h3>
-              {milestones.map((m, i) => (
-                <motion.div
-                  key={m.company}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ margin: "-50px" }}
-                  transition={{ duration: 0.4, delay: 0.1 * i }}
-                  className="flex gap-4 items-start"
-                >
-                  <div className="flex flex-col items-center">
-                    <div className="w-2.5 h-2.5 rounded-full bg-primary shrink-0 mt-1.5" />
-                    {i < milestones.length - 1 && (
-                      <div className="w-px flex-1 bg-border mt-1" />
-                    )}
-                  </div>
-                  <div className="pb-6">
-                    <p className="font-semibold text-foreground">{m.company}</p>
-                    <p className="text-xs text-muted-foreground font-mono">{m.period}</p>
-                    <p className="text-sm text-primary font-mono">{m.role}</p>
-                    <p className="text-sm text-muted-foreground mt-1">{m.detail}</p>
-                    {m.achievements && (
-                      <ul className="mt-2 space-y-1">
-                        {m.achievements.map((a, j) => (
-                          <li key={j} className="flex items-start gap-1.5 text-xs text-secondary-foreground">
-                            <span className="text-primary mt-0.5 shrink-0">✦</span>
-                            <span>{a}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                </motion.div>
-              ))}
+            <div className="ac-row">
+              <div className="ac-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              </div>
+              <div><div className="ac-lbl">LinkedIn</div><div className="ac-val"><a href="https://www.linkedin.com/in/manubarki/" target="_blank" rel="noopener" style={{ color: 'var(--purple2)' }}>/in/manubarki</a></div></div>
             </div>
           </motion.div>
         </div>
       </div>
     </section>
   );
-};
-
-export default About;
+}
