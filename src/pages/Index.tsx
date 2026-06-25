@@ -5,7 +5,6 @@ import Tools from '@/components/Tools';
 import Projects from '@/components/Projects';
 import About from '@/components/About';
 import Footer from '@/components/Footer';
-import ScrollCompanion from '@/components/ScrollCompanion';
 import { useEffect, useRef } from 'react';
 
 function Orbs() {
@@ -46,7 +45,6 @@ export default function Index() {
   return (
     <div className="portfolio-root">
       <Orbs />
-      <ScrollCompanion />
       <Nav />
       <Hero />
       <Tools />
