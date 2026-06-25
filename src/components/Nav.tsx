@@ -4,9 +4,9 @@ export default function Nav() {
   return (
     <motion.nav
       className="p-nav"
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4 }}
     >
       <div className="nav-logo">Manu Barki<span>.</span></div>
       <div className="nav-links">
